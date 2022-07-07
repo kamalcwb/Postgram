@@ -1,0 +1,13 @@
+.posts {
+    margin-top: 1em;
+
+}
+
+.posts p {
+    margin-top: 1em;
+    border-radius: 5px;
+    padding: 0.5em;
+    border: 1px solid #7a7a7a;
+    background-color: grey;
+    font-size: 1.3em;
+}

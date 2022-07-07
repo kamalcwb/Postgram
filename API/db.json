@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "556e88aa-77f7-4265-82e9-f972b7e34f25",
+      "username": "teste",
+      "password": "$2b$10$4XMn52ZsVixYtzxD1Zt74O2XvzkHa8Qkf3akVOYrLOAbWV371EjMW"
+    }
+  ],
+  "posts": [
+    {
+      "id": "e1343d96-f266-4674-a27a-487bf3714fa9",
+      "msg": "uma post teste"
+    },
+    {
+      "id": "d221e3ba-bf4e-4413-a8b8-60dffb421c5d",
+      "msg": "teste5555"
+    },
+    {
+      "id": "c0d73c67-acad-438a-bf54-414d9aeb4b91",
+      "msg": "testando"
+    },
+    {
+      "id": "ecc1e5d6-fc42-491d-a71d-81e0c493eec9",
+      "msg": "asdf"
+    },
+    {
+      "id": "669adc3e-ba48-4f1c-865e-29ee2e6465df",
+      "msg": "teste"
+    },
+    {
+      "id": "ed962b3d-8287-4cbd-95c8-8aed61203eff",
+      "msg": "ola"
+    },
+    {
+      "id": "78a9574b-200a-4c67-a9ce-95cae741ebdc",
+      "msg": "teste"
+    },
+    {
+      "id": "1604a122-8a9c-4197-8703-083e7fcbe6d9",
+      "msg": "kkkk"
+    },
+    {
+      "id": "4bc52ffd-8813-417c-a869-3f6ae9f09d55",
+      "msg": "Hoje o tio bilu tava muito chato, nem falou comigo e nao me ajudou em nada. ele é um fedorento"
+    },
+    {
+      "id": "d704a817-ab93-4061-a856-1f7300fabe32",
+      "msg": "ola\n"
+    },
+    {
+      "id": "97547fd4-456c-4062-ba4d-41a233a4044b",
+      "msg": "1"
+    },
+    {
+      "id": "568ba90b-9460-4e5e-be58-09e0c0e84d74",
+      "msg": "testesao"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+.form_control textarea {
+    width: 400px;
+    height: 200px;
+    resize: none;
+    border: 1px solid darkgray;
+}
