@@ -1,20 +1,35 @@
+import React from 'react';
 
-import React from 'react'
-import styles from './Home.module.css'
-import Button from '../components/layout/Button'
+import styles from './Home.module.css';
 
+import PostForm from '../components/layout/PostForm';
+import GetPost from '../components/layout/GetPost'
 
 const Home = () => {
+
+
+  const createPost = (msg) => {
+
+    fetch("http://localhost:5000/posts", {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(msg),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data)
+        window.location.reload();
+      })
+      .catch(err => console.log(err))
+  }
+
   return (
-    <div className={styles.container}>
-      <div className={styles.wrapper}>
-        <h1 >Login</h1>
-        <form >
-          <input placeholder="usuario" />
-          <input placeholder="senha" type="password" />
-          <Button to='/' text='Entrar' />
-          <a href='/newaccount'>Criar uma conta</a>
-        </form>
+    <div className={styles.post_container}>
+      <PostForm handleSubmit={createPost} btnText="Postar" />
+      <div>
+        <GetPost />
       </div>
     </div>
   )

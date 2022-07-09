@@ -24,7 +24,7 @@ const GetPost = () => {
             <div>
                 {posts.length > 0 &&
                     posts.map((post) => (
-                        <p>{post.msg}</p>
+                        <p key={post.id}>{post.msg}</p>
                     ))}
             </div>
         </div>

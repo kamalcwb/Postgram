@@ -27,16 +27,13 @@ export const createUser = async (req, res) => {
 
 export const loginUser = async (req, res) => {
     const db = getConnection()
-    const user = db.data.users.find((u) => u.username === req.params.username)
-    if (!user) return res.sendStatus(404)
-
+    const user = db.data.users.find(user => user.username === req.body.username)
+    if (user == null) {
+        return res.status(404).send('Usuario não encontrado.')
+    }
     try {
         if (await bcrypt.compare(req.body.password, user.password)) {
-            const match = await bcrypt.compare(password, user.passwordHash);
-
-            if (match) {
-                res.send('logou com sucesso')
-            }
+            res.send('logou com sucesso')
         }
     } catch (err) {
         return (res.status(500).send(err))

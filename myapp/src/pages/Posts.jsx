@@ -7,7 +7,6 @@ import GetPost from '../components/layout/GetPost'
 
 const Posts = () => {
 
-
     const createPost = (msg) => {
 
         fetch("http://localhost:5000/posts", {
@@ -19,7 +18,6 @@ const Posts = () => {
         })
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data)
                 window.location.reload();
             })
             .catch(err => console.log(err))

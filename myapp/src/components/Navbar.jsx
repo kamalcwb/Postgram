@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Container from './Container'
 import styles from './Navbar.module.css'
 
+import { AuthContext } from '../context/auth'
 
-const Navbar = () => {
+
+const Navbar = (user) => {
+    const { logout } = useContext(AuthContext)
+
+    const handleLogout = () => {
+        logout()
+    }
     return (
         <nav className={styles.navbar}>
             <Container>
@@ -15,7 +22,7 @@ const Navbar = () => {
                 </ul>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <Link to='/login'>Entrar</Link>
+                        <Link onClick={handleLogout} to='/login'>SAIR</Link>
                     </li>
                 </ul>
             </Container>

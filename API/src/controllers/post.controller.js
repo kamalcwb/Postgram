@@ -13,7 +13,7 @@ export const createPost = async (req, res) => {
     }
     try {
         const db = getConnection()
-        db.data.posts.push(newPost)
+        db.data.posts.unshift(newPost)
         await db.write()
 
         res.json(newPost)

@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
+
 import styles from './PostForm.module.css'
 import SubmitButton from './SubmitButton'
 import Input from './Input'
 
-const PostForm = ({ handleSubmit, btnText, postData, }) => {
+const PostForm = ({ handleSubmit, postData, }) => {
     const [post, setPost] = useState(postData)
 
     const submit = (e) => {
