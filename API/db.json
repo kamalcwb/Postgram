@@ -1,63 +1,28 @@
 {
   "users": [
     {
-      "id": "98aaf5cf-7c4c-4cd4-b236-3746daa6d777",
+      "id": "19fd588f-d1dd-4d1e-aca0-04d1aeaace57",
+      "username": "senhateste",
+      "password": "$2b$10$OYo0TszZfbecBgwJcX983eXOv3V8NSn6XEa.kJcTf3ReGdJ7QwWue"
+    },
+    {
+      "id": "84052442-151a-4023-b0fa-87b5b5580169",
       "username": "admin",
-      "password": "$2b$10$eK3rIEhVGM9WeMDZuTEicudbvhcQdRTk50EgDSdoOmDXTQDfvPOvK"
-    },
-    {
-      "id": "619306ca-5ef1-4031-9a38-e0380b82528a",
-      "username": "teste6",
-      "password": "12345"
-    },
-    {
-      "id": "2ece2c99-7d08-404b-9b5d-ea82f3947861",
-      "username": "user",
-      "password": "senha"
-    },
-    {
-      "id": "323323fe-e17f-4f11-9c52-9cf5f901d84e",
-      "username": "teste3",
-      "password": "$2b$10$ISGlDgvXZkvZbtanymws1.HbwUxXmdcwLPfsMq1OXmkCEzmg3Txm."
-    },
-    {
-      "id": "f3fec67e-17ea-4930-acc9-be5ed87fc9ad",
-      "username": "kamalcwb",
-      "password": "$2b$10$3zbMYC3FVshePkLhVddvGuEW/8i4/zYYKHPre5gPGBGuz9fIWoQqa"
-    },
-    {
-      "id": "d0adbc1f-0954-4f84-9c84-8dfdb890a9b7",
-      "username": "teste2",
-      "password": "$2b$10$2fAtwcVsBefNSHKIy18QSelkctgC6oRgQ9TwLiXHWmG1jquiWBgNq"
-    },
-    {
-      "id": "556e88aa-77f7-4265-82e9-f972b7e34f25",
-      "username": "teste",
-      "password": "12345"
-    },
-    {
-      "id": "6f008f1c-81ee-49ab-bb35-d894d09e49d2",
-      "username": "fgdf",
-      "password": "$2b$10$5V57OX8pAckxmK2b7LhAduDnILwiCxrBO/pat7Bh5lFzfz/29CYjS"
-    },
-    {
-      "id": "c675be88-f6d8-4480-9a79-3a38c6eb4e6b",
-      "username": "admin2",
-      "password": "$2b$10$Ei64v02u0Aum8v9Ixv3S9e5eJZIkBTKLtBKBQR2nE8tFK57SnsBIa"
+      "password": "$2b$10$fyBOkpctL.vKfomQ4gOkK.9kCqrU98VFijKns86TjhuCgu.ElMSJK"
     }
   ],
   "posts": [
     {
-      "id": "2c00307d-f364-4140-907c-5dedd2e4e0f7",
-      "msg": "backend teste"
+      "id": "48bde420-acd2-4dda-9c71-296987b163c3",
+      "msg": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam omnis cumque et amet minus eius ipsam sed necessitatibus iusto maiores hic eum ex, molestias nulla architecto ab, fugiat, inventore quaerat.\nLorem ipsum dolor sit amet consectetur adipisicing elit. Numquam omnis cumque et amet minus eius ipsam sed necessitatibus iusto maiores hic eum ex, molestias nulla architecto ab, fugiat, inventore quaerat.\nLorem ipsum dolor sit amet consectetur adipisicing elit. Numquam omnis cumque et amet minus eius ipsam sed necessitatibus iusto maiores hic eum ex, molestias nulla architecto ab, fugiat, inventore quaerat.\nLorem ipsum dolor sit amet consectetur adipisicing elit. Numquam omnis cumque et amet minus eius ipsam sed necessitatibus iusto maiores hic eum ex, molestias nulla architecto ab, fugiat, inventore quaerat.\n"
     },
     {
-      "id": "97547fd4-456c-4062-ba4d-41a233a4044b",
-      "msg": "1"
+      "id": "63523516-565f-42b9-9b32-b77f039844a6",
+      "msg": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam omnis cumque et amet minus eius ipsam sed necessitatibus iusto maiores hic eum ex, molestias nulla architecto ab, fugiat, inventore quaerat."
     },
     {
-      "id": "568ba90b-9460-4e5e-be58-09e0c0e84d74",
-      "msg": "testesao"
+      "id": "3599c18f-5a63-4d53-a423-64d22730cc85",
+      "msg": "POST TESTE"
     }
   ]
 }

@@ -29,6 +29,7 @@ const Login = () => {
                         placeholder="usuario"
                         name="username"
                         id="username"
+                        required
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
@@ -37,11 +38,13 @@ const Login = () => {
                         type="password"
                         name="password"
                         id="password"
+                        required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <button>ENTRAR</button>
-                    <a href='/register'>Criar uma conta</a>
+                    <p>Não tem uma conta? <a href='/register'>Cadastre-se</a></p>
+
                 </form>
             </div>
         </div>

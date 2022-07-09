@@ -17,7 +17,6 @@ const Navbar = (user) => {
             <Container>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <Link to='/'>Home</Link>
                     </li>
                 </ul>
                 <ul className={styles.list}>
