@@ -39,9 +39,18 @@
       "id": "6f008f1c-81ee-49ab-bb35-d894d09e49d2",
       "username": "fgdf",
       "password": "$2b$10$5V57OX8pAckxmK2b7LhAduDnILwiCxrBO/pat7Bh5lFzfz/29CYjS"
+    },
+    {
+      "id": "c675be88-f6d8-4480-9a79-3a38c6eb4e6b",
+      "username": "admin2",
+      "password": "$2b$10$Ei64v02u0Aum8v9Ixv3S9e5eJZIkBTKLtBKBQR2nE8tFK57SnsBIa"
     }
   ],
   "posts": [
+    {
+      "id": "2c00307d-f364-4140-907c-5dedd2e4e0f7",
+      "msg": "backend teste"
+    },
     {
       "id": "97547fd4-456c-4062-ba4d-41a233a4044b",
       "msg": "1"

@@ -8,22 +8,7 @@ const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const user = { username, password }
-
-    fetch("http://localhost:5000/users/login", {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json',
-        },
-        body: JSON.stringify(user),
-    })
-        .then((resp) => resp.json())
-        .then((data) => {
-            return (data)
-        })
-        .catch(err => console.log(err))
-
-    const { authenticated, login } = useContext
+    const { login } = useContext
         (AuthContext)
 
 
@@ -39,7 +24,6 @@ const Login = () => {
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <h1 >Login</h1>
-                <p>{String(authenticated)}</p>
                 <form onSubmit={handleSubmit}>
                     <input
                         placeholder="usuario"
