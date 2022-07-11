@@ -3,8 +3,8 @@ import { getPost, createPost, deletePost } from '../controllers/post.controller.
 
 const router = Router()
 
-router.get('/posts', getPost)
-router.post('/posts', createPost)
+router.get('/posts/getposts', getPost)
+router.post('/posts/newpost', createPost)
 router.delete('/posts/:id', deletePost)
 
 export default router;

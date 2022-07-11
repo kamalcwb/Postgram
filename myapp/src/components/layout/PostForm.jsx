@@ -15,15 +15,17 @@ const PostForm = ({ handleSubmit, postData, }) => {
 
     const handleChange = (e) => {
         setPost({ ...post, [e.target.name]: e.target.value })
-        console.log(post.msg)
     }
     return (
         <form className={styles.text} onSubmit={submit}>
             <div className={styles.text_area}>
-                <Input type="textarea" name="msg" handleOnChange={handleChange} />
+                <Input
+                    type="textarea"
+                    name="msg"
+                    handleOnChange={handleChange} />
             </div>
             <div >
-                <SubmitButton onClick={submit} className={styles.btn} text="Postar" />
+                <SubmitButton className={styles.btn} text="Postar" />
             </div>
         </form>
     )

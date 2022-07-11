@@ -49,10 +49,8 @@ const Register = () => {
                         id="password"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                         title="Deve conter no minimo 6 caracteres com pelo menos uma letra maiuscula, uma letra minuscula e um numero"
-
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-
                     />
                     <SubmitButton className={styles.btn} text="CRIAR CONTA" />
                     <p>Já tem uma conta? <a href='/login'> ENTRAR</a></p>

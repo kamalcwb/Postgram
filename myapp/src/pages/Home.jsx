@@ -6,20 +6,16 @@ import PostForm from '../components/layout/PostForm';
 import GetPost from '../components/layout/GetPost'
 
 const Home = () => {
+  const createPost = (post) => {
 
-
-  const createPost = (msg) => {
-
-    fetch("http://localhost:5000/posts", {
+    fetch("http://localhost:5000/posts/newpost", {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(msg),
+      body: JSON.stringify(post),
     })
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data)
+      .then(() => {
         window.location.reload();
       })
       .catch(err => console.log(err))

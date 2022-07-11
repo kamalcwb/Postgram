@@ -6,7 +6,7 @@ const GetPost = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/posts", {
+        fetch("http://localhost:5000/posts/getposts", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
