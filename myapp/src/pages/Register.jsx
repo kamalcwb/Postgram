@@ -3,10 +3,13 @@ import { useState } from 'react'
 
 import styles from './Register.module.css'
 import SubmitButton from '../components/layout/SubmitButton'
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -21,6 +24,7 @@ const Register = () => {
             body: JSON.stringify(user),
         })
             .then(() => {
+                navigate('/login')
                 console.log('Novo usuario cadastrado com sucesso')
             }).catch((err) => console.log(err))
     }
