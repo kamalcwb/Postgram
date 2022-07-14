@@ -32,9 +32,9 @@ export const AuthProvider = ({ children }) => {
 
         const loggedUser = response.data
         const token = response.data.token
-
         localStorage.setItem("user", JSON.stringify(loggedUser))
         localStorage.setItem("token", token)
+        localStorage.setItem("onlineUser", username)
 
         api.defaults.headers.Authorization = `Bearer ${token}`
 
@@ -44,6 +44,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         console.log("logout")
+        localStorage.removeItem("onlineUser")
         localStorage.removeItem("user")
         localStorage.removeItem("token")
         api.defaults.headers.Authorization = null

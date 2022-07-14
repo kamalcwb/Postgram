@@ -9,6 +9,7 @@ export const getPost = (req, res) => {
 export const createPost = async (req, res) => {
     const newPost = {
         id: uuid(),
+        username: req.body.username,
         msg: req.body.msg
     }
     try {
