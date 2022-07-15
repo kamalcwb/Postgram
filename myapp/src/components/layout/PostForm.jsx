@@ -5,16 +5,27 @@ import styles from './PostForm.module.css'
 import SubmitButton from './SubmitButton'
 import Input from './Input'
 
-const PostForm = ({ handleSubmit, postData, }) => {
-    const [post, setPost] = useState(postData)
+const PostForm = () => {
+    const [post, setPost] = useState()
 
     const submit = (e) => {
         e.preventDefault()
-        handleSubmit(post)
+        fetch("http://localhost:5000/posts/newpost", {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(post),
+        })
+            .then(() => {
+                window.location.reload();
+            })
+            .catch(err => console.log(err))
     }
 
     const handleChange = (e) => {
         setPost({ ...post, [e.target.name]: e.target.value })
+        console.log(post)
     }
     return (
         <form className={styles.text} onSubmit={submit}>
