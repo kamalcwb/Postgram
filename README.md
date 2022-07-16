@@ -38,4 +38,5 @@ Interface para postagem de mensagens
 + 1)Clone o projeto
 + 2)Instale as dependências
 + 3)Entre na pasta /myapp e execute o front-end com   npm start
-+ 4)Entre na pasta /API e execute o backend com   npm run backend
++ 4)Crie e configure um arquivo .env com sua senha JWT_SEC
++ 5)Entre na pasta /API e execute o backend com   npm run backend
