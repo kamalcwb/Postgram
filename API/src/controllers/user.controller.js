@@ -4,7 +4,6 @@ import jwt from 'jsonwebtoken'
 import { getConnection } from '../database.js'
 
 
-const JWT_SEC = 'JWTSEC'
 
 export const getUser = (req, res) => {
     const db = getConnection()
@@ -37,7 +36,7 @@ export const loginUser = async (req, res) => {
     }
     try {
         if (await bcrypt.compare(req.body.password, user.password)) {
-            const token = jwt.sign({ userId: user.id }, JWT_SEC, { expiresIn: "7d" })
+            const token = jwt.sign({ userId: user.id }, process.env.JWT_SEC, { expiresIn: "7d" })
             return res.json({ auth: true, token })
         }
     } catch (err) {

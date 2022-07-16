@@ -28,6 +28,8 @@ const Login = () => {
                     <input
                         placeholder="usuario"
                         name="username"
+                        type="text"
+                        autoComplete="on"
                         id="username"
                         required
                         value={username}
@@ -37,6 +39,7 @@ const Login = () => {
                         placeholder="senha"
                         type="password"
                         name="password"
+                        autoComplete="on"
                         id="password"
                         required
                         value={password}
