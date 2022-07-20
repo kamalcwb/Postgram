@@ -23,8 +23,11 @@ const Register = () => {
 
     function validate() {
         if (!user.username) return setStatus({ type: 'error', mesage: 'Erro: Necessário preencha o campo usuario!' });
+        if (user.username.match(/[\s]+/)) return setStatus({ type: 'error', mesage: 'Erro: Nome de usuario não pode conter espaços em branco!' });
+
         if (!user.password) return setStatus({ type: 'error', mesage: 'Erro: Necessário preencher o campo senha!' });
         if (user.password.length < 6) return setStatus({ type: 'error', mesage: 'Erro: A senha precisa ter pelo menos seis caracteres!' });
+        if (user.password.match(/[\s]+/)) return setStatus({ type: 'error', mesage: 'Erro: Sua senha não pode conter espaços em branco!' });
         if (!user.password.match(/[a-z]+/)) return setStatus({ type: 'error', mesage: 'Erro: Sua senha deve conter ao menos uma letra minuscula' });
         if (!user.password.match(/[A-Z]+/)) return setStatus({ type: 'error', mesage: 'Erro: Sua senha deve conter ao menos uma letra maiuscula' });
         if (!user.password.match(/[0-9]+/)) return setStatus({ type: 'error', mesage: 'Erro: Sua senha deve conter ao menos um número' });
