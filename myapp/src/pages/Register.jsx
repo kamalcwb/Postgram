@@ -17,14 +17,17 @@ const Register = () => {
 
     const [status, setStatus] = useState({
         type: '',
-        mensagem: ''
+        mesage: ''
     });
 
 
     function validate() {
-        if (!user.username) return setStatus({ type: 'error', mensagem: 'Erro: Necessário preencha o campo usuario!' });
-        if (!user.password) return setStatus({ type: 'error', mensagem: 'Erro: Necessário preencher o campo senha!' });
-        if (user.password.length < 6) return setStatus({ type: 'error', mensagem: 'Erro: A senha precisa ter pelo menos seis caracteres!' });
+        if (!user.username) return setStatus({ type: 'error', mesage: 'Erro: Necessário preencha o campo usuario!' });
+        if (!user.password) return setStatus({ type: 'error', mesage: 'Erro: Necessário preencher o campo senha!' });
+        if (user.password.length < 6) return setStatus({ type: 'error', mesage: 'Erro: A senha precisa ter pelo menos seis caracteres!' });
+        if (!user.password.match(/[a-z]+/)) return setStatus({ type: 'error', mesage: 'Erro: Sua senha deve conter ao menos uma letra minuscula' });
+        if (!user.password.match(/[A-Z]+/)) return setStatus({ type: 'error', mesage: 'Erro: Sua senha deve conter ao menos uma letra maiuscula' });
+        if (!user.password.match(/[0-9]+/)) return setStatus({ type: 'error', mesage: 'Erro: Sua senha deve conter ao menos um número' });
 
         return true;
     }
@@ -39,7 +42,7 @@ const Register = () => {
         if (saveDataForm) {
             setStatus({
                 type: 'success',
-                mensagem: "Usuário cadastrado com sucesso!"
+                mesage: "Usuário cadastrado com sucesso!"
             });
             setUser({
                 name: '',
@@ -48,7 +51,7 @@ const Register = () => {
         } else {
             setStatus({
                 type: 'error',
-                mensagem: "Erro: Usuário não cadastrado com sucesso!"
+                mesage: "Erro: Usuário não cadastrado com sucesso!"
             });
         }
 
@@ -70,8 +73,8 @@ const Register = () => {
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <h1>CRIAR UMA CONTA</h1>
-                {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
-                {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
+                {status.type === 'success' ? <p style={{ color: "green" }}>{status.mesage}</p> : ""}
+                {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mesage}</p> : ""}
 
                 <form onSubmit={handleSubmit}>
                     <input
