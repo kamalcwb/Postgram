@@ -16,6 +16,11 @@ export const createUser = async (req, res) => {
         username: req.body.username,
         password: await bcrypt.hash(req.body.password, 10)
     }
+    const db = getConnection()
+    const user = db.data.users.find(user => user.username === req.body.username)
+    if (user) {
+        return res.status(406).send('Usuario já cadastrado')
+    }
     try {
         const db = getConnection()
         db.data.users.push(newUser)

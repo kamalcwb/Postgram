@@ -6,8 +6,6 @@ import SubmitButton from '../components/layout/SubmitButton'
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-    const valueInput = e => setUser({ ...user, [e.target.name]: e.target.value });
-
     const navigate = useNavigate()
 
     const [user, setUser] = useState({
@@ -19,6 +17,8 @@ const Register = () => {
         type: '',
         mesage: ''
     });
+
+    const valueInput = e => setUser({ ...user, [e.target.name]: e.target.value });
 
 
     function validate() {
@@ -88,7 +88,7 @@ const Register = () => {
                         id="username"
                         // pattern="[A-Za-z]{3,}" title="Deve conter pelo menos 4 letras"
                         onChange={valueInput}
-                        value={user.username}
+                        value={user.username || ''}
 
 
                     />
@@ -101,7 +101,7 @@ const Register = () => {
                         // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                         // title="Deve conter no minimo 6 caracteres com pelo menos uma letra maiuscula, uma letra minuscula e um numero"
                         onChange={valueInput}
-                        value={user.password}
+                        value={user.password || ''}
                     />
                     <SubmitButton className={styles.btn} text="CRIAR CONTA" />
                     <p>Já tem uma conta? <a href='/login'> ENTRAR</a></p>
