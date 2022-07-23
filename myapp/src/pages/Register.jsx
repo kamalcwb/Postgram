@@ -24,6 +24,7 @@ const Register = () => {
     function validate() {
         if (!user.username) return setStatus({ type: 'error', mesage: 'Erro: Necessário preencha o campo usuario!' });
         if (user.username.match(/[\s]+/)) return setStatus({ type: 'error', mesage: 'Erro: Nome de usuario não pode conter espaços em branco!' });
+        if (user.username.match(/[^A-zÀ-ú]+/)) return setStatus({ type: 'error', mesage: 'Erro: Nome de usuario deve conter apenas letras!' });
 
         if (!user.password) return setStatus({ type: 'error', mesage: 'Erro: Necessário preencher o campo senha!' });
         if (user.password.length < 6) return setStatus({ type: 'error', mesage: 'Erro: A senha precisa ter pelo menos seis caracteres!' });
@@ -67,7 +68,10 @@ const Register = () => {
             body: JSON.stringify(user),
         })
             .then(() => {
-                navigate('/login')
+                setTimeout({
+                    // navigate('/login')
+                }, 500)
+
                 console.log('Novo usuario cadastrado com sucesso')
             }).catch((err) => console.log(err))
     }
