@@ -24,13 +24,12 @@ export const createUser = async (req, res) => {
     const user = db.data.users.find(user => user.username === req.body.username)
     if (user) {
         err.push({ type: error, mesage: "Usuario já cadastrado." })
-        return res.status(400).send('Usuario já cadastrado.')
+        return Promise.reject('Usuario já cadastrado.');
+        // return res.status(400).send('Usuario já cadastrado.')
     }
     if (err.length > 0) {
         console.log(err)
-        req.session.errors = err;
-        req.session.success = false
-        return //res.redirect('/')
+        // return res.status(400).json({ error: err.array() }
     }
     try {
         const db = getConnection()
