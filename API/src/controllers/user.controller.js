@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import session from 'express-session'
+
 
 import { getConnection } from '../database.js'
 
