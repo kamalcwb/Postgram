@@ -14,7 +14,6 @@ export const getUser = (req, res) => {
 }
 
 export const createUser = async (req, res) => {
-    const err = []
     const newUser = {
         id: uuid(),
         username: req.body.username,
@@ -23,13 +22,7 @@ export const createUser = async (req, res) => {
     const db = getConnection()
     const user = db.data.users.find(user => user.username === req.body.username)
     if (user) {
-        err.push({ type: error, mesage: "Usuario já cadastrado." })
-        return Promise.reject('Usuario já cadastrado.');
-        // return res.status(400).send('Usuario já cadastrado.')
-    }
-    if (err.length > 0) {
-        console.log(err)
-        // return res.status(400).json({ error: err.array() }
+        return res.status(400).send({ message: 'Usuario já cadastrado.' })
     }
     try {
         const db = getConnection()
@@ -37,8 +30,9 @@ export const createUser = async (req, res) => {
         await db.write()
 
         res.json(newUser)
-    } catch (err) {
-        return (res.status(500).send(err))
+    }
+    catch (error) {
+        return (res.status(500).send(error))
     }
 
 }
