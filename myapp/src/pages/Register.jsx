@@ -67,7 +67,7 @@ const Register = () => {
         })
             .then(res => {
                 if (!res.ok) {
-                    throw Error(String(res.data.message))
+                    throw Error('Novo usuario cadastrado com sucesso')
                 }
                 console.log('Novo usuario cadastrado com sucesso')
             })
@@ -79,7 +79,7 @@ const Register = () => {
             .catch((err) => {
                 setStatus({
                     type: 'error',
-                    message: err.response.data
+                    message: err.res.Error
                 })
             })
     }
