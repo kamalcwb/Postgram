@@ -67,9 +67,9 @@ const Register = () => {
         })
             .then(res => {
                 if (!res.ok) {
-                    throw Error('Novo usuario cadastrado com sucesso')
-                }
-                console.log('Novo usuario cadastrado com sucesso')
+                    throw Error('Nome de usuario já cadastrado')
+                } else
+                    console.log('Novo usuario cadastrado com sucesso')
             })
             .then(() => {
                 setTimeout({
@@ -79,7 +79,7 @@ const Register = () => {
             .catch((err) => {
                 setStatus({
                     type: 'error',
-                    message: err.res.Error
+                    message: err.message
                 })
             })
     }
