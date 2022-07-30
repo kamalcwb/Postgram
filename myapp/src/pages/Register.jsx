@@ -75,6 +75,7 @@ const Register = () => {
                 setTimeout({
                     // navigate('/login')
                 }, 500)
+
             })
             .catch((err) => {
                 setStatus({

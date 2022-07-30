@@ -13,7 +13,7 @@ export const getUser = (req, res) => {
     res.json(db.data.users)
 }
 
-export const createUser = async (req, res) => {
+export const createUser = async (req, res, next) => {
     const newUser = {
         id: uuid(),
         username: req.body.username,
@@ -21,18 +21,34 @@ export const createUser = async (req, res) => {
     }
     const db = getConnection()
     const user = db.data.users.find(user => user.username === req.body.username)
-    if (user) {
-        return res.status(400).send({ message: 'Usuario já cadastrado.' })
-    }
+    // if (user) {
+    //     return res.status(400).send({ message: 'Usuario já cadastrado.' })
+    // }
     try {
-        const db = getConnection()
-        db.data.users.push(newUser)
-        await db.write()
+        if (!user) {
+            const db = getConnection()
+            db.data.users.push(newUser)
+            await db.write()
 
-        res.json(newUser)
+            res.json(newUser)
+        } else {
+            throw new Error('jaCadastrado')
+        }
+        // const db = getConnection()
+        // db.data.users.push(newUser)
+        // await db.write()
+
+        // res.json(newUser)
     }
     catch (error) {
-        return (res.status(500).send(error))
+        if (error.message === 'jaCadastrado') {
+            next({ status: 400, message: 'Usuario já cadastrado.' })
+        }
+        else {
+            next({ status: 500, message: '' })
+        }
+
+        // return res.status(400).send({ message: 'Usuario já cadastrado.' })
     }
 
 }
