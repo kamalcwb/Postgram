@@ -41,23 +41,6 @@ const Register = () => {
 
         if (!validate()) return;
 
-        const saveDataForm = true;
-
-        if (saveDataForm) {
-            setStatus({
-                type: 'success',
-                message: "Usuário cadastrado com sucesso!"
-            });
-            setUser({
-                name: '',
-                password: ''
-            });
-        } else {
-            setStatus({
-                type: 'error',
-                message: "Erro: Usuário não cadastrado com sucesso!"
-            });
-        }
         fetch("http://localhost:5000/users/register", {
             method: 'POST',
             headers: {
@@ -67,15 +50,18 @@ const Register = () => {
         })
             .then(res => {
                 if (!res.ok) {
-                    throw Error('Nome de usuario já cadastrado')
+                    console.log(res)
+                    console.log(res.message)
+                    // throw Error(res.json.message)
+                    // throw Error('Erro: Nome de usuario já cadastrado')
                 } else
-                    console.log('Novo usuario cadastrado com sucesso')
-            })
-            .then(() => {
-                setTimeout({
-                    // navigate('/login')
-                }, 500)
-
+                    setStatus({
+                        type: 'success',
+                        message: "Usuário cadastrado com sucesso!"
+                    });
+                setTimeout(() => {
+                    navigate('/login')
+                }, 300)
             })
             .catch((err) => {
                 setStatus({
@@ -89,8 +75,8 @@ const Register = () => {
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <h1>CRIAR UMA CONTA</h1>
-                {status.type === 'success' ? <p style={{ color: "green" }}>{status.message}</p> : ""}
-                {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.message}</p> : ""}
+                {status.type === 'success' ? <span style={{ color: "green" }}>{status.message}</span> : ""}
+                {status.type === 'error' ? <span style={{ color: "#ff0000" }}>{status.message}</span> : ""}
 
                 <form onSubmit={handleSubmit}>
                     <input

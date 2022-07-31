@@ -32,7 +32,8 @@ export const createUser = async (req, res, next) => {
 
             res.json(newUser)
         } else {
-            throw new Error('jaCadastrado')
+            throw Error('Usuario já cadastrado.')
+            // return res.status(500).json({ message: 'Usuario já cadastrado.' })
         }
         // const db = getConnection()
         // db.data.users.push(newUser)
@@ -41,14 +42,14 @@ export const createUser = async (req, res, next) => {
         // res.json(newUser)
     }
     catch (error) {
-        if (error.message === 'jaCadastrado') {
-            next({ status: 400, message: 'Usuario já cadastrado.' })
-        }
-        else {
-            next({ status: 500, message: '' })
-        }
+        // if (error.message === 'jaCadastrado') {
+        //     next({ status: 400, message: 'Usuario já cadastrado.' })
+        // }
+        // else {
+        //     next({ status: 500, message: '' })
+        // }
+        return res.status(400).send({ message: 'Usuario já cadastrado.' })
 
-        // return res.status(400).send({ message: 'Usuario já cadastrado.' })
     }
 
 }
