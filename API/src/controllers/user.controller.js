@@ -31,8 +31,10 @@ export const createUser = async (req, res, next) => {
             await db.write()
 
             res.json(newUser)
+            next()
         } else {
             throw Error('Usuario já cadastrado.')
+            next()
             // return res.status(500).json({ message: 'Usuario já cadastrado.' })
         }
         // const db = getConnection()
